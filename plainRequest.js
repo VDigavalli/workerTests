@@ -70,12 +70,17 @@ function fetchWithTime(url, timeout){
 };
 
 function testWorker() {
+    
+    console.log("inside testWorker function");
+    
     var myWorker = new Worker('workerTest.js');
 
     var message = { addThis: { num1: 1, num2: 2 } };
 
     myWorker.postMessage(message);
 
+    console.log("inside testWorker function, posted message");
+    
     myWorker.onmessage = function (e) {
         console.log(e.data.result);
     };
