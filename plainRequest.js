@@ -69,14 +69,18 @@ function fetchWithTime(url, timeout){
     })]);
 };
 
-var myWorker = new Worker('workerTest.js');
+function testWorker() {
+    var myWorker = new Worker('workerTest.js');
 
-var message = {addThis: {num1:1, num2:2}};
+    var message = { addThis: { num1: 1, num2: 2 } };
 
-myWorker.postMessage(message);
+    myWorker.postMessage(message);
 
-myWorker.onmessage = function(e) {
-    console.log(e.data.result);
-};
+    myWorker.onmessage = function (e) {
+        console.log(e.data.result);
+    };
+}
+
+testWorker();
 // load(url, printResponse)
 //    .then((values) => postResp(values)).catch(err => {console.log("Exception occured")});
