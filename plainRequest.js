@@ -59,7 +59,8 @@ async function orchestrator(){
 fetchWithTime(url, 5000)
 .then(res => res.json())
 .then(resp => printResponse(resp))
-.then(console.log("All Done"));
+.then(console.log("All Done"))
+.then(testWorker());
 
 
 function fetchWithTime(url, timeout){
@@ -86,6 +87,6 @@ function testWorker() {
     };
 }
 
-testWorker();
+//testWorker();
 // load(url, printResponse)
 //    .then((values) => postResp(values)).catch(err => {console.log("Exception occured")});
