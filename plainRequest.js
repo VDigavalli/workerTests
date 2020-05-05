@@ -77,7 +77,7 @@ function testWorker() {
     
     var myWorker = new Worker('workerTest.js');
 
-    var message = { addThis: { num1: 1} };
+    var message = { num1: 5 ,num2: 6};
 
     myWorker.postMessage(message);
 
