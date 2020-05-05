@@ -60,7 +60,8 @@ fetchWithTime(url, 5000)
 .then(res => res.json())
 .then(resp => printResponse(resp))
 .then(console.log("All Done"))
-.then(testWorker());
+.then(testWorker())
+.then(console.log("now all is done"));
 
 
 function fetchWithTime(url, timeout){
